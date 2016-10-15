@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 命名空间，作用就是对sql进行分类化管理,理解为sql隔离 注意：使用mapper代理方法开发，namespace有特殊重要的作用 -->
+<mapper namespace="com.iot.mybatis.dao.Mapper">
+	<select id="findOrdersUser" resultType="com.iot.mybatis.po.OrdersCustom" useCache="true">
+		SELECT
+		orders.*,
+		user.username,
+		user.sex,
+		user.address
+		FROM
+		orders,
+		user
+		WHERE orders.user_id = user.id
+	</select>
+	
+	
+	
+</mapper>
